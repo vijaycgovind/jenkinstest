@@ -3,7 +3,7 @@ pipeline
 	agent any
 	stage('SCM CEheckout State')
  				{
- 				 git 
+ 				 git https://github.com/vijaycgovind/jenkinstest
  				}
 	stages
 		{

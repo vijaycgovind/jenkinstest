@@ -1,0 +1,49 @@
+pipeline
+{
+	agent any
+	stages
+		{
+ 			stage('Compile State')
+ 				{
+ 				steps
+ 				  {
+ 						withMaven(maven : 'maven_3_5_4')
+ 						{
+ 							sh 'mvn clean compile'
+ 						}
+ 					}
+ 				}
+ 				
+ 			stage('Testing State')
+ 				{
+ 				steps
+ 				  {
+ 						withMaven(maven : 'maven_3_5_4')
+ 						{
+ 							sh 'mvn test'
+ 						}
+ 					}
+ 				}
+ 			stage('Deployment State')
+ 				{
+ 				steps
+ 				  {
+ 						withMaven(maven : 'maven_3_5_4')
+ 						{
+ 							sh 'mvn deploy'
+ 						}
+ 					}
+ 				}
+ 			stage('Install State')
+ 				{
+ 				steps
+ 				  {
+ 						withMaven(maven : 'maven_3_5_4')
+ 						{
+ 							sh 'mvn install'
+ 						}
+ 					}
+ 				}		
+		}
+
+}

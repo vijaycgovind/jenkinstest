@@ -1,6 +1,10 @@
 pipeline
 {
 	agent any
+	stage('SCM CEheckout State')
+ 				{
+ 				 git 
+ 				}
 	stages
 		{
  			stage('Compile State')

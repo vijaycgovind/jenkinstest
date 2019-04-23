@@ -1,10 +1,7 @@
 pipeline
 {
 	agent any
-	stage('SCM CEheckout State')
- 				{
- 				 git https://github.com/vijaycgovind/jenkinstest
- 				}
+	
 	stages
 		{
  			stage('Compile State')

@@ -34,7 +34,7 @@ pipeline
  						}
  					}
  				}
- 			stage('Deployment State')
+ 			stage('Package State')
  				{
  				steps
  				  {
@@ -42,7 +42,7 @@ pipeline
  						{
  							dir("jenkinsDemo")
 							{
-								sh 'mvn deploy'
+								sh 'mvn package'
 							}
 							
  						}

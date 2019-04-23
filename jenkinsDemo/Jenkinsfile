@@ -10,10 +10,7 @@ pipeline
  				  {
  						withMaven(maven : 'localMaven')
  						{
-							sh 'ls -al'
-							sh 'cd jenkinsDemo'
-							sh 'ls -al'
-							sh 'pwd'
+							
 							dir("jenkinsDemo")
 							{
 								sh 'mvn clean compile'
@@ -29,7 +26,11 @@ pipeline
  				  {
  						withMaven(maven : 'localMaven')
  						{
- 							sh 'mvn test'
+ 							dir("jenkinsDemo")
+							{
+								sh 'mvn test'
+							}
+							
  						}
  					}
  				}
@@ -39,7 +40,11 @@ pipeline
  				  {
  						withMaven(maven : 'localMaven')
  						{
- 							sh 'mvn deploy'
+ 							dir("jenkinsDemo")
+							{
+								sh 'mvn deploy'
+							}
+							
  						}
  					}
  				}
@@ -49,7 +54,11 @@ pipeline
  				  {
  						withMaven(maven : 'localMaven')
  						{
- 							sh 'mvn install'
+ 							dir("jenkinsDemo")
+							{
+								sh 'mvn install'
+							}
+							
  						}
  					}
  				}		

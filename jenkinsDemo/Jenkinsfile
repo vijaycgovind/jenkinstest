@@ -10,7 +10,8 @@ pipeline
  				  {
  						withMaven(maven : 'localMaven')
  						{
- 							sh 'mvn clean compile'
+ 							cd jenkinsDemo
+							sh 'mvn clean compile'
  						}
  					}
  				}

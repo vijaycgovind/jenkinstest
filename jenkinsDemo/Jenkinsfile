@@ -10,6 +10,7 @@ pipeline
  				  {
  						withMaven(maven : 'localMaven')
  						{
+							sh 'ls -al'
 							sh 'mvn clean compile'
  						}
  					}

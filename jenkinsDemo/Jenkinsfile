@@ -12,6 +12,8 @@ pipeline
  						{
 							sh 'ls -al'
 							sh 'cd jenkinsDemo'
+							sh 'ls -al'
+							sh 'pwd'
 							sh 'mvn clean compile'
  						}
  					}
